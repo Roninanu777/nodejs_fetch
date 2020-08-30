@@ -18,7 +18,11 @@ function getData(url, page) {
   });
 }
 
-getData(base_url, 1).then((data) => console.log(data));
+let result = [];
+
+for (let i = 1; i <= 25; i++) {
+  getData(base_url, i).then((data) => result.push(data));
+}
 
 // const request = require('request-promise');
 // const urls = ["http://www.google.com", "http://www.example.com"];
