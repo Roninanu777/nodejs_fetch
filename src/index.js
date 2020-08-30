@@ -22,8 +22,8 @@ let result = [];
 
 for (let i = 1; i <= 25; i++) {
   getData(base_url, i).then((data) => {
-    console.log(data);
     result.push(data);
+    console.log(result.length);
   });
 }
 
