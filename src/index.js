@@ -1,7 +1,7 @@
 const https = require("https");
 let base_url = "https://jsonmock.hackerrank.com/api/countries";
 
-function getData(url, page) {
+function getAllData(url, page) {
   let api = `${url}?page=${page}`;
   return new Promise((resolve, reject) => {
     https
@@ -18,14 +18,18 @@ function getData(url, page) {
   });
 }
 
-let result = [];
-
-for (let i = 1; i <= 25; i++) {
-  getData(base_url, i).then((data) => {
-    result.push(data);
-    console.log(result.length);
-  });
+function getCountryName() {
+  let result = [];
+  for (let i = 1; i <= 25; i++) {
+    getAllData(base_url, i).then((data) => {
+      result.push(data);
+      console.log(result.length);
+    });
+  }
+  return result;
 }
+
+getCountryName();
 
 // const request = require('request-promise');
 // const urls = ["http://www.google.com", "http://www.example.com"];
