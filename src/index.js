@@ -21,7 +21,10 @@ function getData(url, page) {
 let result = [];
 
 for (let i = 1; i <= 25; i++) {
-  getData(base_url, i).then((data) => result.push(data));
+  getData(base_url, i).then((data) => {
+    console.log(data);
+    result.push(data);
+  });
 }
 
 // const request = require('request-promise');
