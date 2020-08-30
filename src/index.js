@@ -1,6 +1,4 @@
 const https = require("https");
-console.log("\n");
-
 let base_url = "https://jsonmock.hackerrank.com/api/countries";
 
 function getData(url, page) {
