@@ -11,7 +11,7 @@ function getData(url, page) {
           data += chunk;
         });
         res.on("end", (_) => {
-          resolve(JSON.parse(data));
+          resolve(JSON.parse(data).data);
         });
       })
       .on("error", (err) => reject(err));
