@@ -6,6 +6,7 @@ for (let i = 0; i < 25; i++) {
   urls.push(`${base_url}?page=${i + 1}`);
 }
 
+//Fetch all country details
 function getData(callback) {
   let results = [];
   let expecting = urls.length;
@@ -28,6 +29,7 @@ function getData(callback) {
   });
 }
 
+//Fetch country name
 function getCountryName(code) {
   getData((results) => {
     let name = "";
@@ -43,6 +45,7 @@ function getCountryName(code) {
   });
 }
 
+//Fetch country code
 function getCountryCode(country) {
   getData((results) => {
     let name = "";
