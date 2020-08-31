@@ -42,3 +42,18 @@ function getCountryName(code) {
     console.log(name);
   });
 }
+
+function getCountryCode(country) {
+  getData((results) => {
+    let name = "";
+    for (let i = 0; i < results.length; i++) {
+      for (let j = 0; j < results[i].length; j++) {
+        if (results[i][j].name === country) {
+          name = results[i][j].alpha2Code;
+          break;
+        }
+      }
+    }
+    console.log(name);
+  });
+}
